@@ -20,26 +20,27 @@ class ListViewPosts extends StatelessWidget {
                   title: Text(
                     '${posts[position].title}',
                     style: TextStyle(
-                      fontSize: 22.0,
+                      fontSize: 17.0,
                       color: Colors.deepOrangeAccent,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                   subtitle: Text(
                     '${posts[position].body}',
                     style: new TextStyle(
-                      fontSize: 18.0,
+                      fontSize: 17.0,
                       fontStyle: FontStyle.italic,
                     ),
                   ),
                   leading: Column(
                     children: <Widget>[
                       CircleAvatar(
-                        backgroundColor: Colors.blueAccent,
+                        backgroundColor: Colors.purpleAccent,
                         radius: 35.0,
                         child: Text(
                           'User ${posts[position].userId}',
                           style: TextStyle(
-                            fontSize: 22.0,
+                            fontSize: 18.0,
                             color: Colors.white,
                           ),
                         ),
@@ -57,6 +58,6 @@ class ListViewPosts extends StatelessWidget {
   void _onTapItem(BuildContext context, Post post) {
     Scaffold
         .of(context)
-        .showSnackBar(new SnackBar(content: new Text(post.id.toString() + ' - ' + post.title)));
+        .showSnackBar(new SnackBar(content: new Text('Post ID: ' +post.id.toString() + ' - ' + post.title)));
   }
 }
